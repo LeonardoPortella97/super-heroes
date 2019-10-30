@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "ability_id"; 
+            name = abilityID; 
+            prototypeName = id; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = name; name = name; prototypeName = longText; }
+    ); 
+    attributesUsedForLocking = (abilityID, id); 
+    className = "br.com.superhero.model.SuperHero"; 
+    classProperties = (name, superPower); 
+    externalName = "super_hero"; 
+    fetchSpecificationDictionary = {}; 
+    name = SuperHero; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Ability; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = abilityID; }); 
+            name = superPower; 
+        }
+    ); 
+}
